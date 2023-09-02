@@ -13,7 +13,7 @@ def insertion_sort(alist):
    
 
 
-def shellSort(alist):
+def shell_sort(alist):
     sublistcount = len(alist)//2
     while sublistcount > 0:
 
@@ -35,6 +35,14 @@ def gapInsertionSort(alist,start,gap):
             position = position-gap
 
         alist[position]=currentvalue
+
+
+
+
+def python_sort(alist):
+   alist2=alist.sort()
+   return alist2
+           
 
 def main():
     return    
