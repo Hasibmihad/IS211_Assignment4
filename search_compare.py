@@ -26,7 +26,7 @@ def ordered_sequential_search(alist,item):
     return found
     
 
-    
+
 def binary_search_iterative(a_list, item):
     first = 0
     last = len(a_list) - 1
@@ -56,7 +56,6 @@ def binary_search_recursive(a_list,item):
             return binary_search_recursive(a_list[:midpoint], item)
         else:
             return binary_search_recursive(a_list[midpoint + 1:], item)
-    return 
 
 
 
