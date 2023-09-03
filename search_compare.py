@@ -93,8 +93,8 @@ def main():
     random_list = []
     sequential_search_dict={}
     ordered_sequential_search_dict={}
-    binary_search_iterative_iterative_dict={}
-    binary_search_iterative_recursive_dict={}
+    binary_search_iterative_dict={}
+    binary_search_recursive_dict={}
 
     totaltimeForSequential=0
     totaltimeForSeqOrdered=0
@@ -119,12 +119,15 @@ def main():
 
     averageTime=totaltimeForSequential/500
     sequential_search_dict[500]=averageTime
+
     averageTime=totaltimeForSeqOrdered/500
     ordered_sequential_search_dict[500]=averageTime
+
     averageTime=totaltimeForBinaryIte/500
-    binary_search_iterative_iterative_dict[500]=averageTime
+    binary_search_iterative_dict[500]=averageTime
+    
     averageTime=totaltimeForBinaryRec/500
-    binary_search_iterative_recursive_dict[500]=averageTime
+    binary_search_recursive_dict[500]=averageTime
 
 
 if __name__=="__main__":
