@@ -133,24 +133,48 @@ def main():
         averageTime=totaltimeForBinaryRec/sizeList
         binary_search_recursive_dict[sizeList]=averageTime
 
-
-        print
+    print (".......................Sequential Search................................")
+    print ("\n")
 
     print(f"Sequential Search took {sequential_search_dict[500]:10.7f} seconds to run, on average for size 500")
 
     print(f"Sequential Search took {sequential_search_dict[1000]:10.7f} seconds to run, on average for size 1000")
 
     print(f"Sequential Search took {sequential_search_dict[10000]:10.7f} seconds to run, on average for size 10000")
+    print ("\n")
+    print ("....................... Ordered Sequential Search................................")
+    print ("\n")
+
+    print(f"Ordered Sequential Search took {ordered_sequential_search_dict[500]:10.7f} seconds to run, on average for size 500")
+
+    print(f"Ordered Sequential Search took {ordered_sequential_search_dict[1000]:10.7f} seconds to run, on average for size 1000")
+
+    print(f"Ordered Sequential Search took {ordered_sequential_search_dict[10000]:10.7f} seconds to run, on average for size 10000")
+    print ("\n")
 
 
-    print("Ordered Sequential Search:")
-    print(ordered_sequential_search_dict)
+    print ("....................... Binary Search Iterative................................")
+    print ("\n")
 
-    print("Binary Search Iterative:")
-    print(binary_search_iterative_dict)
+    print(f"Binary Search Iterative took {binary_search_iterative_dict[500]:10.7f} seconds to run, on average for size 500")
 
-    print("Binary Search Recursive:")
-    print(binary_search_recursive_dict)
+    print(f"Binary Search Iterative took {binary_search_iterative_dict[1000]:10.7f} seconds to run, on average for size 1000")
+
+    print(f"Binary Search Iterative took {binary_search_iterative_dict[10000]:10.7f} seconds to run, on average for size 10000")
+    print ("\n")
+
+    print ("....................... Binary Search Recursive................................")
+    print ("\n")
+
+    print(f"Binary Search Recursive took {binary_search_recursive_dict[500]:10.7f} seconds to run, on average for size 500")
+
+    print(f"Binary Search Recursive took {binary_search_recursive_dict[1000]:10.7f} seconds to run, on average for size 1000")
+
+    print(f"Binary Search Recursive took {binary_search_recursive_dict[10000]:10.7f} seconds to run, on average for size 10000")
+    print ("\n")
+
+
+
 
 
 if __name__=="__main__":
