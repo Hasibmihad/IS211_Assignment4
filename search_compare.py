@@ -91,14 +91,24 @@ def main():
     numberOfList = 100
     sizesOfList = [500, 1000, 10000]
     random_list = []
+    sequential_search_dict={}
+    ordered_sequential_search_dict={}
+    binary_search_iterative_iterative_dict={}
+    binary_search_iterative_recursive_dict={}
 
-    for i in range(0, 500):
-        random_list.append(random.randint(0, 1000000))
-        #print(random_list)
-    
-    found,time_taken=sequential_search(random_list,-1)
-
-    #print (found,time_taken)
+    totaltimeForSequential=0
+    totaltimeForSeqOrdered=0
+    totaltimeForBinaryIte=0
+    totaltimeForBinaryRec=0
+    for countlist in range (numberOfList):
+        for i in range(0, 500):
+            random_list.append(random.randint(0, 1000000))
+        found,time_taken=sequential_search(random_list,-1)
+        totaltimeForSequential+=time_taken
+    print (countlist)
+    averageTime=totaltimeForSequential/500
+    sequential_search_dict[500]=averageTime
+    #print(sequential_search_dict[500])
 
 if __name__=="__main__":
     main()
