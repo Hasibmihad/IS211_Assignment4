@@ -96,40 +96,61 @@ def main():
     binary_search_recursive_dict={}
 
 
-    totaltimeForSequential=0
-    totaltimeForSeqOrdered=0
-    totaltimeForBinaryIte=0
-    totaltimeForBinaryRec=0
-    for countlist in range (numberOfList):
-        random_list = []
-        for i in range(0, 500):
-            random_list.append(random.randint(0, 1000000))
-        found,time_taken=sequential_search(random_list,-1)
-        totaltimeForSequential+=time_taken
+    
+    for sizeList in sizesOfList:
+        totaltimeForSequential=0
+        totaltimeForSeqOrdered=0
+        totaltimeForBinaryIte=0
+        totaltimeForBinaryRec=0
+        for countlist in range (numberOfList):
+            random_list = []
+            for i in range(0, sizeList):
+                random_list.append(random.randint(0, 1000000))
+            found,time_taken=sequential_search(random_list,-1)
+            totaltimeForSequential+=time_taken
 
-        random_list.sort()
+            random_list.sort()
 
-        found,time_taken=ordered_sequential_search(random_list,-1)
-        totaltimeForSeqOrdered+=time_taken
+            found,time_taken=ordered_sequential_search(random_list,-1)
+            totaltimeForSeqOrdered+=time_taken
 
-        found,time_taken=binary_search_iterative(random_list,-1)
-        totaltimeForBinaryIte+=time_taken
+            found,time_taken=binary_search_iterative(random_list,-1)
+            totaltimeForBinaryIte+=time_taken
 
-        found,time_taken=binary_search_recursive(random_list,-1)
-        totaltimeForBinaryRec+=time_taken
+            found,time_taken=binary_search_recursive(random_list,-1)
+            totaltimeForBinaryRec+=time_taken
 
 
-    averageTime=totaltimeForSequential/500
-    sequential_search_dict[500]=averageTime
+        averageTime=totaltimeForSequential/sizeList
+        sequential_search_dict[sizeList]=averageTime
 
-    averageTime=totaltimeForSeqOrdered/500
-    ordered_sequential_search_dict[500]=averageTime
+        averageTime=totaltimeForSeqOrdered/sizeList
+        ordered_sequential_search_dict[sizeList]=averageTime
 
-    averageTime=totaltimeForBinaryIte/500
-    binary_search_iterative_dict[500]=averageTime
+        averageTime=totaltimeForBinaryIte/sizeList
+        binary_search_iterative_dict[sizeList]=averageTime
 
-    averageTime=totaltimeForBinaryRec/500
-    binary_search_recursive_dict[500]=averageTime
+        averageTime=totaltimeForBinaryRec/sizeList
+        binary_search_recursive_dict[sizeList]=averageTime
+
+
+        print
+
+    print(f"Sequential Search took {sequential_search_dict[500]:10.7f} seconds to run, on average for size 500")
+
+    print(f"Sequential Search took {sequential_search_dict[1000]:10.7f} seconds to run, on average for size 1000")
+
+    print(f"Sequential Search took {sequential_search_dict[10000]:10.7f} seconds to run, on average for size 10000")
+
+
+    print("Ordered Sequential Search:")
+    print(ordered_sequential_search_dict)
+
+    print("Binary Search Iterative:")
+    print(binary_search_iterative_dict)
+
+    print("Binary Search Recursive:")
+    print(binary_search_recursive_dict)
 
 
 if __name__=="__main__":
