@@ -105,10 +105,27 @@ def main():
             random_list.append(random.randint(0, 1000000))
         found,time_taken=sequential_search(random_list,-1)
         totaltimeForSequential+=time_taken
-    print (countlist)
+
+        found,time_taken=ordered_sequential_search(random_list,-1)
+        totaltimeForSeqOrdered+=time_taken
+
+
+        found,time_taken=binary_search_iterative(random_list,-1)
+        totaltimeForBinaryIte+=time_taken
+
+        found,time_taken=binary_search_recursive(random_list,-1)
+        totaltimeForBinaryRec+=time_taken
+
+
     averageTime=totaltimeForSequential/500
     sequential_search_dict[500]=averageTime
-    #print(sequential_search_dict[500])
+    averageTime=totaltimeForSeqOrdered/500
+    ordered_sequential_search_dict[500]=averageTime
+    averageTime=totaltimeForBinaryIte/500
+    binary_search_iterative_iterative_dict[500]=averageTime
+    averageTime=totaltimeForBinaryRec/500
+    binary_search_iterative_recursive_dict[500]=averageTime
+
 
 if __name__=="__main__":
     main()
