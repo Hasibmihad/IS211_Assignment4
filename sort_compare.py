@@ -1,4 +1,9 @@
+import time 
+import random
+
 def insertion_sort(alist):
+   start= time.time()
+   
    for index in range(1,len(alist)):
 
      currentvalue = alist[index]
@@ -9,11 +14,13 @@ def insertion_sort(alist):
          position = position-1
 
      alist[position]=currentvalue
-     return alist
+   end=time.time()  
+   return alist,end-start
    
 
 
 def shell_sort(alist):
+    start= time.time()
     sublistcount = len(alist)//2
     while sublistcount > 0:
 
@@ -23,7 +30,8 @@ def shell_sort(alist):
       #print("After increments of size",sublistcount,"The list is",alist)
 
       sublistcount = sublistcount // 2
-    return alist
+    end=time.time()        
+    return alist,end-start
 def gapInsertionSort(alist,start,gap):
     for i in range(start+gap,len(alist),gap):
 
@@ -40,12 +48,31 @@ def gapInsertionSort(alist,start,gap):
 
 
 def python_sort(alist):
-   alist2=alist.sort()
-   return alist2
+   start= time.time()
+   alist.sort()
+   end=time.time()        
+   return alist,end-start
            
 
 def main():
-    return    
+    sizesOfList = [500, 1000, 10000]
+
+    for size in sizesOfList:
+        random_list=[]
+        for i in range(0, size):
+            random_list.append(random.randint(0, 1000000))
+        print ("\n")
+        print (f"..........................FOR SIZE {size}...............................")
+        print ("\n")
+        sorted_list, insertion_sort_time = insertion_sort(random_list)
+        print(f"Insertion Sort took {insertion_sort_time:10.7f} seconds to run, on average for size {size}")
+        print ("\n")
+        sorted_list, shell_sort_time = shell_sort(random_list)
+        print(f"Shell Sort took {shell_sort_time:10.7f} seconds to run, on average for size {size}")
+        print ("\n")
+        sorted_list, python_sort_time = python_sort(random_list)
+        print(f"Python Sort took {python_sort_time:10.7f} seconds to run, on average for size {size}")  
+        
 
 
 if __name__=="__main__":
